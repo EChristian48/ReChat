@@ -3,6 +3,11 @@ import { render } from 'react-dom'
 
 import { App } from './App'
 
+import * as firebase from 'firebase/app'
+import { firebaseConfig } from './firebaseConfig'
+
+firebase.initializeApp(firebaseConfig)
+
 render(
   <React.StrictMode>
     <App />
