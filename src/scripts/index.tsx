@@ -6,6 +6,8 @@ import { App } from './App'
 import * as firebase from 'firebase/app'
 import { firebaseConfig } from './firebaseConfig'
 
+import '../styles/utils.css'
+
 firebase.initializeApp(firebaseConfig)
 
 render(
