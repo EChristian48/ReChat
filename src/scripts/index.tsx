@@ -6,6 +6,7 @@ import { App } from './App'
 import * as firebase from 'firebase/app'
 import { firebaseConfig } from './firebaseConfig'
 
+import '@fortawesome/fontawesome-free/css/all.css'
 import '../styles/utils.css'
 
 firebase.initializeApp(firebaseConfig)
