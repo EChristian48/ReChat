@@ -9,6 +9,8 @@
     "sourceMap": true,
 
     "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"]
   },
   "exclude": ["node_modules"]
