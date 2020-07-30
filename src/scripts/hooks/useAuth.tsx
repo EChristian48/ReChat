@@ -17,4 +17,4 @@ const useAuth = () => {
   return user
 }
 
-export { useAuth }
+export { useAuth, LoggedInStatus }
