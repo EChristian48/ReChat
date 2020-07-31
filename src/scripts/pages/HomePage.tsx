@@ -1,11 +1,27 @@
 import * as React from 'react'
 
-class HomePage extends React.Component {
+import { AppBar, Toolbar, Typography, Button } from '@material-ui/core'
+
+type HomePageState = {}
+
+class HomePage extends React.Component<{}, HomePageState> {
+  logout = () => {
+    location.href = '/#/logout'
+  }
+
   render() {
     return (
-      <div>
-        <div></div>
-      </div>
+      <AppBar>
+        <Toolbar>
+          <Typography style={{ flexGrow: 1 }} variant='h6'>
+            ReChat
+          </Typography>
+
+          <Button variant='outlined' color='inherit' onClick={this.logout}>
+            Logout
+          </Button>
+        </Toolbar>
+      </AppBar>
     )
   }
 }
