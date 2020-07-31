@@ -7,6 +7,7 @@ import { LoginPage } from './pages/LoginPage'
 import { useAuth } from './hooks/useAuth'
 import { CheckAuth } from './components/CheckAuth'
 import { LogoutPage } from './pages/LogoutPage'
+import { HomePage } from './pages/HomePage'
 
 const App: React.FC = () => {
   const user = useAuth()
@@ -15,19 +16,21 @@ const App: React.FC = () => {
     <CssBaseline>
       <Router>
         <Switch>
-          {user && <Redirect from='/login' to='/home' />}
+          {user && <Redirect from='/login' to='/' />}
 
           <Route path='/login'>
             <LoginPage />
           </Route>
 
-          <Route path='/home'>
-            <CheckAuth user={user}>Home</CheckAuth>
-          </Route>
-
           <Route path='/logout'>
             <CheckAuth user={user}>
               <LogoutPage />
+            </CheckAuth>
+          </Route>
+
+          <Route path='/'>
+            <CheckAuth user={user}>
+              <HomePage />
             </CheckAuth>
           </Route>
         </Switch>
