@@ -2,6 +2,7 @@ import * as React from 'react'
 
 import { LoggedInStatus } from '../hooks/useAuth'
 import { Redirect } from 'react-router-dom'
+import { CircularProgress, Backdrop } from '@material-ui/core'
 type CheckAuthProps = {
   user: LoggedInStatus
 }
@@ -14,7 +15,11 @@ const CheckAuth: React.FC<CheckAuthProps> = props => {
       return <>{props.children}</>
     }
   }
-  return <div></div>
+  return (
+    <Backdrop open>
+      <CircularProgress />
+    </Backdrop>
+  )
 }
 
 export { CheckAuth }
