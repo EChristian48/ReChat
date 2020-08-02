@@ -28,3 +28,5 @@ const AddChatDialog: React.FC = () => {
     </Dialog>
   )
 }
+
+export { AddChatDialog }
