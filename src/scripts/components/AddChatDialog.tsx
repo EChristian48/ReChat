@@ -9,9 +9,15 @@ import {
   Button,
 } from '@material-ui/core'
 
-const AddChatDialog: React.FC = () => {
+type AddChatDialogProps = {
+  onConfirm: () => void
+  onClose: () => void
+  open: boolean
+}
+
+const AddChatDialog: React.FC<AddChatDialogProps> = props => {
   return (
-    <Dialog open>
+    <Dialog open={props.open} onClose={props.onClose}>
       <DialogTitle>Start New Chat</DialogTitle>
       <DialogContent>
         <DialogContentText>
@@ -22,8 +28,8 @@ const AddChatDialog: React.FC = () => {
         <TextField variant='outlined' label='E-Mail' fullWidth />
       </DialogContent>
       <DialogActions>
-        <Button>Cancel</Button>
-        <Button>Chat!</Button>
+        <Button onClick={props.onClose}>Cancel</Button>
+        <Button onClick={props.onConfirm}>Chat!</Button>
       </DialogActions>
     </Dialog>
   )
