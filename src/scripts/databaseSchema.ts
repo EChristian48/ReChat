@@ -12,3 +12,5 @@ interface Message {
   content: string
   sender: string
 }
+
+export { User, Message, ChatSession }
