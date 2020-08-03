@@ -5,6 +5,7 @@ import { App } from './App'
 
 import * as firebase from 'firebase/app'
 import 'firebase/functions'
+import 'firebase/firestore'
 import { firebaseConfig } from './firebaseConfig'
 
 import '@fortawesome/fontawesome-free/css/all.css'
