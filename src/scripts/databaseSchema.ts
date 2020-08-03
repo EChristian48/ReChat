@@ -1,6 +1,6 @@
 interface User {
-  name: string
-  photoUrl: string
+  name: string | undefined
+  photoUrl: string | undefined
 }
 
 interface ChatSession {
