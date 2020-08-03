@@ -1,6 +1,7 @@
 #custom
 public
 firebaseConfig.*
+firestore_data
 
 # Logs
 logs
