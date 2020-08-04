@@ -11,13 +11,14 @@ import {
 type ChatListItemProps = {
   avatar?: string
   name: string
+  uid: string
   lastText?: string
 }
 
 const ChatListItem: React.FC<ChatListItemProps> = props => {
   return (
     <>
-      <ListItem component='a' href='sujono'>
+      <ListItem component='a' href={`#/${props.uid}`}>
         <ListItemAvatar>
           <Avatar src={props.avatar} />
         </ListItemAvatar>
