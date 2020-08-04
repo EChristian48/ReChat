@@ -14,7 +14,7 @@ const createUserDocument = functions.auth.user().onCreate(user => {
     name: user.displayName,
     photoUrl: user.photoURL,
   }
-  console.log(user.uid)
+
   return userDocRef.create(userData)
 })
 
