@@ -8,17 +8,14 @@ admin.initializeApp()
 // Start writing Firebase Functions
 // https://firebase.google.com/docs/functions/typescript
 
-export const helloWorld = functions.https.onRequest((request, response) => {
-  functions.logger.info('Hello logs!', { structuredData: true })
-  response.send('Hello from Firebase!')
-})
-
 const createUserDocument = functions.auth.user().onCreate(user => {
   const userDocRef = admin.firestore().doc(`users/${user.uid}`)
   const userData: User = {
     name: user.displayName,
     photoUrl: user.photoURL,
   }
+  console.log(user.uid)
+  return userDocRef.create(userData)
 })
 
 export { createUserDocument }
