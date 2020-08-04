@@ -12,14 +12,24 @@ import {
 import { ChatListItem } from '../../scripts/components/ChatListItem'
 import { AddChatFab } from '../components/AddChatFab'
 import { AddChatDialog } from '../components/AddChatDialog'
+
+import * as firebase from 'firebase/app'
+import 'firebase/firestore'
+
+import { User, ChatSession } from '../databaseSchema'
+
 type HomePageState = {
   isDialogOpen: boolean
+  chatSessions: ChatSession[]
 }
 
 class HomePage extends React.Component<{}, HomePageState> {
   state: HomePageState = {
     isDialogOpen: false,
+    chatSessions: [],
   }
+
+  createChatSession = () => {}
 
   closeDialog = () => {
     this.setState({
@@ -35,6 +45,10 @@ class HomePage extends React.Component<{}, HomePageState> {
 
   logout = () => {
     location.href = '/#/logout'
+  }
+
+  async componentDidMount() {
+    const chatSessionsRef = firebase.firestore().collection
   }
 
   render() {
@@ -53,7 +67,11 @@ class HomePage extends React.Component<{}, HomePageState> {
         </AppBar>
 
         <List>
-          <ChatListItem name='Henri Sujono' lastText='Halo aku ganteng' />
+          <ChatListItem
+            name='Henri Sujono'
+            lastText='Halo aku ganteng'
+            uid='ucok'
+          />
         </List>
 
         <AddChatFab onClick={this.openDialog} />
