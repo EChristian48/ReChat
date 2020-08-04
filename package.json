@@ -7,7 +7,8 @@
     "dev-build": "webpack --config webpack.dev.js",
     "start": "webpack-dev-server --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js",
-    "emulator": "firebase emulators:start --import=./firestore_data --export-on-exit"
+    "emulator": "firebase emulators:start --import=./firestore_data --export-on-exit",
+    "func-watch": "cd functions && tsc --watch"
   },
   "repository": {
     "type": "git",
