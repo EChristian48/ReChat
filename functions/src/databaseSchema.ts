@@ -4,7 +4,7 @@ interface User {
 }
 
 interface ChatSession {
-  users: [string, string]
+  users: [string | undefined | null, string | undefined | null]
 }
 
 interface Message {
